@@ -4,12 +4,19 @@ using namespace std;
 
 int main()
 {
-    char number[11], name[10];
+    char number[11], name[12];
     int all;
     
     cout << "請輸入您的身分證字號";
     cin >> number;
-    number[1] = name[2];
+    
+    for(int x = 0; x < 12; x++){
+        name[x] = 0;
+    }
+    name[0] = number[0];
+    for(int x = 1, y = 2; x < 12, y < 13; x++, y++){
+        name[y] = number[x];
+    }
     'A' == 10;
     'B' == 11;
     'C' == 12;
@@ -42,6 +49,7 @@ int main()
     if (all%10 == 0)
         cout << "正確";
     else 
-        cout <<"錯誤";
+        cout << "錯誤";
+    
     return 0;
 }
